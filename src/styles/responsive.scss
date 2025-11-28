@@ -1,0 +1,124 @@
+/* src/styles/responsive.scss
+ * 모바일/태블릿에서 공통으로 덮어쓰는 레이아웃 규칙
+ */
+
+@media (max-width: 1024px) {
+  /* 섹션 전체 높이 너무 큰 것 줄이기 ----------------------------- */
+  .hero,
+  .home-highlights,
+  .home-culture,
+  .home-cta {
+    min-height: auto; /* 100vh 강제 제거 */
+  }
+
+  .hero__container,
+  .home-highlights__shell,
+  .home-culture__shell,
+  .home-cta__shell {
+    padding-inline: 1.4rem;
+    padding-block: 3.4rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  /* 공통 헤더 타이틀 사이즈 살짝 줄이기 ------------------------ */
+  .hero__title,
+  .home-highlights__title,
+  .home-culture__title,
+  .home-cta__title {
+    font-size: clamp(1.8rem, 5.6vw, 2.2rem);
+    line-height: 1.35;
+  }
+
+  .home-highlights__subtitle,
+  .home-culture__subtitle,
+  .home-cta__subtitle,
+  .hero__subtitle {
+    font-size: 0.94rem;
+    line-height: 1.8;
+  }
+}
+
+/* 진짜 모바일(<= 640px)에서 더 강하게 정리 ---------------------- */
+@media (max-width: 640px) {
+  /* 모든 섹션은 세로 스택 + 좌측 정렬 느낌으로 */
+  .hero__container,
+  .home-highlights__shell,
+  .home-culture__shell,
+  .home-cta__shell {
+    padding-inline: 1.1rem;
+    padding-block: 3rem;
+    text-align: left;
+  }
+
+  .hero__content,
+  .home-highlights__inner,
+  .home-culture__inner,
+  .home-cta__content {
+    max-width: 100%;
+  }
+
+  /* 카드 그리드 3열 → 1열 강제 통일 ---------------------------- */
+  .home-highlights__grid,
+  .home-culture__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    margin-block: 1.6rem;
+  }
+
+  .home-highlights__card,
+  .home-culture__card {
+    padding: 1.15rem 1.05rem 1.05rem;
+    border-radius: 1rem;
+  }
+
+  /* 하단 카드/블록도 여백 줄이기 ------------------------------- */
+  .home-highlights__fit,
+  .home-culture__bottom,
+  .home-cta__contact {
+    margin-top: 1.5rem;
+    padding: 1.2rem 1.1rem 1.1rem;
+    border-radius: 1.05rem;
+  }
+
+  /* Hero 오른쪽 비주얼: 너무 크면 줄이거나 간소화 -------------- */
+  .hero__visual {
+    height: 360px;
+  }
+
+  /* 플로팅 카드가 너무 복잡하면 아예 숨김 ----------------------- */
+  .hero__card--float {
+    display: none;
+  }
+
+  /* CTA 카드 내부 3컬럼 → 1컬럼 통일 ---------------------------- */
+  .home-cta__contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+
+  /* 공통 폰트 사이즈 전체적으로 0.1rem 정도씩 다운 -------------- */
+  .home-highlights__card-body,
+  .home-culture__card-body,
+  .home-cta__bullet-text,
+  .home-cta__contact-item-text,
+  .home-culture__metric-text {
+    font-size: 0.84rem;
+    line-height: 1.7;
+  }
+
+  .home-highlights__card-list-item,
+  .home-culture__card-list-item {
+    font-size: 0.8rem;
+  }
+
+  /* 상단 라벨(eyebrow) 들도 조금 줄이기 ------------------------ */
+  .hero__badge,
+  .home-highlights__eyebrow,
+  .home-culture__eyebrow,
+  .home-cta__eyebrow {
+    font-size: 0.68rem;
+    padding-inline: 0.9rem;
+  }
+}

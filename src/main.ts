@@ -8,6 +8,7 @@ import './styles/tokens.scss';
 import './styles/main.scss';
 import './styles/typography.scss';
 import './styles/utilities.scss';
+import '@/styles/responsive.scss';
 
 /**
  * 런타임에서 사용할 앱 환경 정보 구조
