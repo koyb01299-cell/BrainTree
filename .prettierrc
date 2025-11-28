@@ -1,0 +1,15 @@
+{
+  "//": "CodeCanvus 엔터프라이즈 코드 스타일 가이드 — 프론트엔드 전체 일관성 유지",
+  "semi": true,
+  "singleQuote": true,
+  "printWidth": 90,
+  "tabWidth": 2,
+  "useTabs": false,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "vueIndentScriptAndStyle": true,
+  "singleAttributePerLine": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "embeddedLanguageFormatting": "auto"
+}

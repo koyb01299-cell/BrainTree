@@ -1,0 +1,281 @@
+/* src/styles/tokens.scss
+ * --------------------------------------------------------------------------
+ * CodeCanvus 디자인 토큰 - Gold Theme
+ * - 전체 사이트를 Hero 섹션의 금빛 톤 기준으로 재구성
+ * -------------------------------------------------------------------------- */
+
+/* ==========================================================================
+   1. COLOR SYSTEM
+   ========================================================================== */
+
+/* Brand / Core ------------------------------------------------------------ */
+$cc-color-bg-root: #fff9f0; // 최바닥 배경 (app 레벨) - 라이트 골드
+$cc-color-bg-deep: #f4ebdd; // 살짝 더 진한 아이보리
+$cc-color-bg-soft: #ffffff; // 라이트 서피스
+$cc-color-bg-muted: #f3e7d6; // 구분용 연한 베이지
+
+$cc-color-ink-strong: #111827;
+$cc-color-ink-default: #1f2933;
+$cc-color-ink-soft: #4b5563;
+$cc-color-ink-muted: #9ca3af;
+
+$cc-color-accent-gold: #d1a037;
+$cc-color-accent-gold-strong: #b7791f;
+$cc-color-accent-gold-soft: rgba(209, 160, 55, 0.16);
+$cc-color-accent-gold-bright: #fbbf24;
+
+/* 필요하다면 나중에 서브 포인트로만 사용 (지금은 안 써도 됨) */
+$cc-color-accent-blue: #2563eb;
+$cc-color-accent-sky: #38bdf8;
+$cc-color-accent-indigo: #4f46e5;
+
+$cc-color-border-subtle: rgba(214, 189, 140, 0.6);
+$cc-color-border-strong: rgba(180, 132, 36, 0.85);
+
+$cc-color-surface-elevated: #ffffff;
+$cc-color-surface-elevated-soft: rgba(255, 255, 255, 0.96);
+
+/* Status ------------------------------------------------------------------ */
+$cc-color-success: #16a34a;
+$cc-color-warning: #ea580c;
+$cc-color-danger: #dc2626;
+$cc-color-info: #0ea5e9;
+
+
+/* ==========================================================================
+   2. SPACING SCALE (8pt 기반 + 세밀 보정)
+   ========================================================================== */
+
+$cc-space-0: 0;
+$cc-space-1: 0.25rem;   // 4px
+$cc-space-1-5: 0.375rem; // 6px
+$cc-space-2: 0.5rem;    // 8px
+$cc-space-2-5: 0.625rem; // 10px
+$cc-space-3: 0.75rem;   // 12px
+$cc-space-3-5: 0.875rem; // 14px
+$cc-space-4: 1rem;      // 16px
+$cc-space-5: 1.25rem;   // 20px
+$cc-space-6: 1.5rem;    // 24px
+$cc-space-7: 1.75rem;   // 28px
+$cc-space-8: 2rem;      // 32px
+$cc-space-9: 2.25rem;   // 36px
+$cc-space-10: 2.5rem;   // 40px
+$cc-space-12: 3rem;     // 48px
+$cc-space-16: 4rem;     // 64px
+$cc-space-20: 5rem;     // 80px
+
+/* ==========================================================================
+   3. RADIUS & SHADOW
+   ========================================================================== */
+
+$cc-radius-xs: 0.25rem;
+$cc-radius-sm: 0.375rem;
+$cc-radius-md: 0.5rem;
+$cc-radius-lg: 0.75rem;
+$cc-radius-xl: 1rem;
+$cc-radius-2xl: 1.5rem;
+$cc-radius-pill: 999px;
+
+/* 그림자도 네이비 계열 대신 골드/브라운 톤으로 살짝 따뜻하게 */
+$cc-shadow-soft: 0 14px 30px rgba(180, 132, 36, 0.16);
+$cc-shadow-medium: 0 18px 40px rgba(180, 132, 36, 0.22);
+$cc-shadow-strong: 0 22px 60px rgba(180, 132, 36, 0.28);
+
+/* ==========================================================================
+   4. TYPOGRAPHY SCALE
+   ========================================================================== */
+
+$cc-font-family-sans: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR',
+  -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', sans-serif;
+
+$cc-font-size-xs: 0.75rem;
+$cc-font-size-sm: 0.875rem;
+$cc-font-size-md: 1rem;
+$cc-font-size-lg: 1.125rem;
+$cc-font-size-xl: 1.25rem;
+$cc-font-size-2xl: 1.5rem;
+$cc-font-size-3xl: 1.875rem;
+$cc-font-size-4xl: 2.25rem;
+
+$cc-line-height-tight: 1.2;
+$cc-line-height-normal: 1.5;
+$cc-line-height-relaxed: 1.8;
+
+/* ==========================================================================
+   5. BREAKPOINTS
+   ========================================================================== */
+
+$cc-breakpoint-sm: 640px;
+$cc-breakpoint-md: 768px;
+$cc-breakpoint-lg: 1024px;
+$cc-breakpoint-xl: 1280px;
+$cc-breakpoint-2xl: 1536px;
+
+/* ==========================================================================
+   6. Z-INDEX LAYERS
+   ========================================================================== */
+
+$cc-z-header: 40;
+$cc-z-overlay: 50;
+$cc-z-modal: 60;
+$cc-z-toast: 70;
+$cc-z-tooltip: 80;
+
+/* ==========================================================================
+   7. TRANSITIONS / EASING
+   ========================================================================== */
+
+$cc-ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+$cc-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+$cc-transition-fast: 120ms;
+$cc-transition-normal: 180ms;
+$cc-transition-slow: 240ms;
+
+/* ==========================================================================
+   8. CSS CUSTOM PROPERTIES
+   ========================================================================== */
+
+:root {
+  /* Color -------------------------------------------------------- */
+  --cc-color-bg-root: #{$cc-color-bg-root};
+  --cc-color-bg-deep: #{$cc-color-bg-deep};
+  --cc-color-bg-soft: #{$cc-color-bg-soft};
+  --cc-color-bg-muted: #{$cc-color-bg-muted};
+
+  --cc-color-ink-strong: #{$cc-color-ink-strong};
+  --cc-color-ink-default: #{$cc-color-ink-default};
+  --cc-color-ink-soft: #{$cc-color-ink-soft};
+  --cc-color-ink-muted: #{$cc-color-ink-muted};
+
+  --cc-color-accent-gold: #{$cc-color-accent-gold};
+  --cc-color-accent-gold-strong: #{$cc-color-accent-gold-strong};
+  --cc-color-accent-gold-soft: #{$cc-color-accent-gold-soft};
+  --cc-color-accent-gold-bright: #{$cc-color-accent-gold-bright};
+
+  --cc-color-accent-blue: #{$cc-color-accent-blue};
+  --cc-color-accent-sky: #{$cc-color-accent-sky};
+  --cc-color-accent-indigo: #{$cc-color-accent-indigo};
+
+  --cc-color-border-subtle: #{$cc-color-border-subtle};
+  --cc-color-border-strong: #{$cc-color-border-strong};
+
+  --cc-color-surface-elevated: #{$cc-color-surface-elevated};
+  --cc-color-surface-elevated-soft: #{$cc-color-surface-elevated-soft};
+
+  --cc-color-success: #{$cc-color-success};
+  --cc-color-warning: #{$cc-color-warning};
+  --cc-color-danger: #{$cc-color-danger};
+  --cc-color-info: #{$cc-color-info};
+
+  /* Spacing ------------------------------------------------------ */
+  --cc-space-0: #{$cc-space-0};
+  --cc-space-1: #{$cc-space-1};
+  --cc-space-1-5: #{$cc-space-1-5};
+  --cc-space-2: #{$cc-space-2};
+  --cc-space-2-5: #{$cc-space-2-5};
+  --cc-space-3: #{$cc-space-3};
+  --cc-space-3-5: #{$cc-space-3-5};
+  --cc-space-4: #{$cc-space-4};
+  --cc-space-5: #{$cc-space-5};
+  --cc-space-6: #{$cc-space-6};
+  --cc-space-7: #{$cc-space-7};
+  --cc-space-8: #{$cc-space-8};
+  --cc-space-9: #{$cc-space-9};
+  --cc-space-10: #{$cc-space-10};
+  --cc-space-12: #{$cc-space-12};
+  --cc-space-16: #{$cc-space-16};
+  --cc-space-20: #{$cc-space-20};
+
+  /* Radius ------------------------------------------------------- */
+  --cc-radius-xs: #{$cc-radius-xs};
+  --cc-radius-sm: #{$cc-radius-sm};
+  --cc-radius-md: #{$cc-radius-md};
+  --cc-radius-lg: #{$cc-radius-lg};
+  --cc-radius-xl: #{$cc-radius-xl};
+  --cc-radius-2xl: #{$cc-radius-2xl};
+  --cc-radius-pill: #{$cc-radius-pill};
+
+  /* Shadow ------------------------------------------------------- */
+  --cc-shadow-soft: #{$cc-shadow-soft};
+  --cc-shadow-medium: #{$cc-shadow-medium};
+  --cc-shadow-strong: #{$cc-shadow-strong};
+
+  /* Typography --------------------------------------------------- */
+  --cc-font-family-sans: #{$cc-font-family-sans};
+  --cc-font-size-xs: #{$cc-font-size-xs};
+  --cc-font-size-sm: #{$cc-font-size-sm};
+  --cc-font-size-md: #{$cc-font-size-md};
+  --cc-font-size-lg: #{$cc-font-size-lg};
+  --cc-font-size-xl: #{$cc-font-size-xl};
+  --cc-font-size-2xl: #{$cc-font-size-2xl};
+  --cc-font-size-3xl: #{$cc-font-size-3xl};
+  --cc-font-size-4xl: #{$cc-font-size-4xl};
+  --cc-line-height-tight: #{$cc-line-height-tight};
+  --cc-line-height-normal: #{$cc-line-height-normal};
+  --cc-line-height-relaxed: #{$cc-line-height-relaxed};
+
+  /* Breakpoints -------------------------------------------------- */
+  --cc-breakpoint-sm: #{$cc-breakpoint-sm};
+  --cc-breakpoint-md: #{$cc-breakpoint-md};
+  --cc-breakpoint-lg: #{$cc-breakpoint-lg};
+  --cc-breakpoint-xl: #{$cc-breakpoint-xl};
+  --cc-breakpoint-2xl: #{$cc-breakpoint-2xl};
+
+  /* Z-index ------------------------------------------------------ */
+  --cc-z-header: #{$cc-z-header};
+  --cc-z-overlay: #{$cc-z-overlay};
+  --cc-z-modal: #{$cc-z-modal};
+  --cc-z-toast: #{$cc-z-toast};
+  --cc-z-tooltip: #{$cc-z-tooltip};
+
+  /* Motion ------------------------------------------------------- */
+  --cc-ease-soft: #{$cc-ease-soft};
+  --cc-ease-out: #{$cc-ease-out};
+  --cc-transition-fast: #{$cc-transition-fast};
+  --cc-transition-normal: #{$cc-transition-normal};
+  --cc-transition-slow: #{$cc-transition-slow};
+}
+
+/* ==========================================================================
+   9. MIXINS
+   ========================================================================== */
+
+/* 반응형 헬퍼: @include cc-up(md) { ... } 식으로 사용 */
+@mixin cc-up($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: #{$cc-breakpoint-sm}) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: #{$cc-breakpoint-md}) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: #{$cc-breakpoint-lg}) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: #{$cc-breakpoint-xl}) {
+      @content;
+    }
+  } @else if $breakpoint == 2xl {
+    @media (min-width: #{$cc-breakpoint-2xl}) {
+      @content;
+    }
+  }
+}
+
+/* 포커스 링 공통 (키보드 접근성) */
+/* 기존 시안의 하늘색 대신 골드 계열로 변경 */
+@mixin cc-focus-ring {
+  outline: 2px solid rgba(234, 179, 8, 0.9);
+  outline-offset: 2px;
+}
+
+/* 카드 / 패널 기본 elevation */
+@mixin cc-surface-elevated {
+  background-color: $cc-color-surface-elevated;
+  border-radius: $cc-radius-xl;
+  box-shadow: $cc-shadow-soft;
+  border: 1px solid $cc-color-border-subtle;
+}

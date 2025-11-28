@@ -1,0 +1,265 @@
+/* src/styles/main.scss
+ * --------------------------------------------------------------------------
+ * CodeCanvus 글로벌 베이스 스타일 - Gold Theme
+ * -------------------------------------------------------------------------- */
+
+/* ==========================================================================
+   1. CSS RESET (모던 최소 리셋)
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 기본 블록 요소 margin 제거 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* 기본 리스트 스타일 제거 (유틸/컴포넌트에서 재정의) */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* img / media ----------------------------------------------------- */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+/* form 요소 ------------------------------------------------------- */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 테이블 ---------------------------------------------------------- */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ==========================================================================
+   2. ROOT / BODY 기본값
+   ========================================================================== */
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--cc-font-family-sans, #{$cc-font-family-sans});
+  font-size: $cc-font-size-md;
+  line-height: $cc-line-height-normal;
+  color: var(--cc-color-ink-default, #{$cc-color-ink-default});
+
+  /* ✅ 전역 배경을 Hero 섹션과 동일한 골드/아이보리 계열로 통일 */
+  background:
+    radial-gradient(circle at 0% 0%, rgba(252, 211, 77, 0.25), transparent 55%),
+    radial-gradient(circle at 75% 100%, rgba(251, 191, 36, 0.16), transparent 60%),
+    linear-gradient(
+      180deg,
+      var(--cc-color-bg-root, #{$cc-color-bg-root}),
+      #f4ebdd
+    );
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 앱 루트는 기본적으로 전체 높이 차지 */
+#app {
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   3. TYPO / 텍스트 기본
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--cc-font-family-sans, #{$cc-font-family-sans});
+  font-weight: 700;
+  color: var(--cc-color-ink-strong, #{$cc-color-ink-strong});
+}
+
+p {
+  color: var(--cc-color-ink-soft, #{$cc-color-ink-soft});
+}
+
+/* 링크 ------------------------------------------------------------ */
+
+a {
+  color: var(--cc-color-accent-blue, #{$cc-color-accent-blue});
+  text-decoration: none;
+  transition:
+    color $cc-transition-normal $cc-ease-soft,
+    text-decoration-color $cc-transition-normal $cc-ease-soft;
+}
+
+a:hover {
+  color: var(--cc-color-accent-indigo, #{$cc-color-accent-indigo});
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* 기본 strong / b ------------------------------------------------- */
+strong,
+b {
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   4. FORM / INTERACTIVE ELEMENTS
+   ========================================================================== */
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* disabled 상태 공통 */
+button:disabled,
+[aria-disabled='true'],
+input:disabled,
+textarea:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 포커스 링 (키보드 접근성) -------------------------------------- */
+a,
+button,
+[role='button'],
+input,
+textarea,
+select {
+  &:focus-visible {
+    @include cc-focus-ring;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* placeholder ----------------------------------------------------- */
+::placeholder {
+  color: var(--cc-color-ink-muted, #{$cc-color-ink-muted});
+}
+
+/* ==========================================================================
+   5. 기본 레이아웃 헬퍼 (페이지 전체 레벨)
+   ========================================================================== */
+
+/* 페이지 루트 섹션 간 여백 기본값 */
+.page-section {
+  padding-block: $cc-space-12;
+}
+
+/* ✅ “page--dark”도 다크 네이비 대신 살짝 더 짙은 골드 톤으로 */
+.page--dark {
+  color: var(--cc-color-ink-strong, #{$cc-color-ink-strong});
+  background:
+    linear-gradient(180deg, #f4ebdd, #f1e2cf);
+}
+
+/* ==========================================================================
+   6. SCROLLBAR (옵션: 데스크톱에서만 약간 정리)
+   ========================================================================== */
+
+@media (min-width: $cc-breakpoint-md) {
+  body {
+    /* ✅ 스크롤바도 골드 계열 */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(214, 189, 140, 0.9) #f7f0df;
+  }
+
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #f7f0df;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: rgba(214, 189, 140, 0.9);
+    border-radius: 999px;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: rgba(214, 189, 140, 1);
+  }
+}
+
+/* ==========================================================================
+   7. TRANSITIONS / ANIMATIONS 기본
+   ========================================================================== */
+
+.fade-up-enter-active,
+.fade-up-leave-active {
+  transition:
+    opacity $cc-transition-normal $cc-ease-soft,
+    transform $cc-transition-normal $cc-ease-soft;
+}
+
+.fade-up-enter-from,
+.fade-up-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* ==========================================================================
+   8. MISC
+   ========================================================================== */
+
+/* 드래그 선택 색상 */
+::selection {
+  background-color: rgba(209, 160, 55, 0.22);
+  color: var(--cc-color-ink-strong, #{$cc-color-ink-strong});
+}
